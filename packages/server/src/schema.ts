@@ -1,5 +1,6 @@
 import { gql } from 'apollo-server'
-import { Resolvers, News } from './__generated__/types'
+
+import { News, Resolvers } from './__generated__/types'
 
 const news: News[] = [
   {
