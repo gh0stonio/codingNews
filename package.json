@@ -1,10 +1,11 @@
 {
-  "name": "codingNews",
   "private": true,
   "author": "gh0stonio <antoine.leveque.pro@gmail.com>",
   "repository": "git@github.com:gh0stonio/codingNews.git",
   "scripts": {
-    "commit": "git-cz"
+    "bootstrap": "yarn install && lerna bootstrap",
+    "commit": "git-cz",
+    "dev": "lerna run dev --stream"
   },
   "husky": {
     "hooks": {
@@ -14,13 +15,12 @@
   "lint-staged": {
     "*.{ts,tsx}": [
       "prettier --write",
-      "eslint --fix",
       "git add"
     ]
   },
   "config": {
     "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
+      "path": "cz-lerna-changelog"
     }
   },
   "prettier": {
@@ -34,7 +34,8 @@
     "packages/*"
   ],
   "devDependencies": {
-    "cz-conventional-changelog": "^3.1.0",
+    "commitizen": "^4.0.3",
+    "cz-lerna-changelog": "^2.0.2",
     "husky": "^4.2.1",
     "lerna": "^3.20.2",
     "lint-staged": "^10.0.7",
